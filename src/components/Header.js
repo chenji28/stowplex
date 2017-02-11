@@ -1,31 +1,27 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import logo from '../logo.svg';
-import {Navbar, MenuItem, NavDropdown, Nav, NavItem} from 'react-bootstrap';
+import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 class Header extends Component {
-  render() {
-    return (
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <img alt="Stowaway" src={logo} />
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <NavItem eventKey={1} href="#">Link</NavItem>
-            <NavItem eventKey={2} href="#">Link</NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
-            </NavDropdown>
-          </Nav>
-        </Navbar>
-    );
-  }
+    render() {
+        return (
+            <Navbar>
+                <Navbar.Header>
+                    <Navbar.Brand>
+                        <img alt="Stowaway" src={logo}/>
+                    </Navbar.Brand>
+                    <Navbar.Toggle />
+                </Navbar.Header>
+                <Navbar.Collapse>
+                    <Nav pullRight>
+                        <NavItem> <a href="#">Become a host</a> </NavItem>
+                        <NavItem> <a href="#">Sign in</a> </NavItem>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        );
+    }
 }
 
 export default Header;
