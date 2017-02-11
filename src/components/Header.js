@@ -9,7 +9,7 @@ class Header extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <img lat="Stowaway" src="{logo}" />
+              <img alt="Stowaway" src={logo} />
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
