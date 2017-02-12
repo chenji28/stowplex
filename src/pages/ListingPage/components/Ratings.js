@@ -9,7 +9,7 @@ class Raitings extends Component {
         <span className="glyphicon glyphicon-star Ratings-star"></span>
         <span className="glyphicon glyphicon-star Ratings-star"></span>
         <span className="glyphicon glyphicon-star Ratings-star"></span>
-        <span className="glyphicon glyphicon-star-empty Ratings-star"></span>
+        <span className="glyphicon glyphicon-star Ratings-star"></span>
       </span>
     );
   }

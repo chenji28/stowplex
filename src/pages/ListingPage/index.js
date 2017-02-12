@@ -70,7 +70,7 @@ class ListingPage extends Component {
       }
     }
     return (
-    	
+
       <div>
       <Grid fluid={true}>
         <div style={styles.heroImage} alt="" ></div>
@@ -172,7 +172,7 @@ class ListingPage extends Component {
         </div>
         </Grid>
       </div>
-      
+
     );
   }
 }

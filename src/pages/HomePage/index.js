@@ -3,7 +3,6 @@ import boxes from '../../boxes.jpg';
 import ladies from './img/ladies.jpg';
 import bike from './img/bike.jpg';
 import GoogleMap from 'google-map-react'
-import MyGreatPlace from './my_great_place.jsx';
 
 import {Grid, Row, Col, PageHeader, Button, Glyphicon, FormControl} from 'react-bootstrap';
 import {Typeahead} from 'react-bootstrap-typeahead';
@@ -38,10 +37,9 @@ class HomePage extends Component {
     render() {
         return (
         	<div>
-            {/*Grid fluid={true}*/}
            <Grid>
                 {/* <div style={{ width: "100%", height: 325, backgroundPosition: 'right center bottom 220px', backgroundImage: `url(${bike})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div> */}
-                <div style={{ width: "100%", height: 370, backgroundPosition: 'center center', backgroundImage: `url(${ladies})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div>
+                <div style={{marginTop: -18, width: "100%", height: 370, backgroundPosition: 'center center', backgroundImage: `url(${ladies})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div>
                 <PageHeader>Store your valuables<br/>
                     <small>love your stuff with StowPlex.</small>
                 </PageHeader>
@@ -84,20 +82,21 @@ class HomePage extends Component {
               defaultCenter={this.props.center}
               defaultZoom={15} >
               <span {...this.props.center}
+								onClick={(e)=>{alert('worked')}}
                 className="glyphicon glyphicon-map-marker"
-                style={{fontSize: 40, color: '#d9230f', textShadow: '1px 2px 0 #eee'}}>
+                style={{cursor: 'pointer', fontSize: 40, color: '#d9230f', textShadow: '1px 2px 0 #eee'}}>
               </span>
               <span {...this.props.neigh1}
                 className="glyphicon glyphicon-map-marker"
-                style={{fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
+                style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
               </span>
               <span {...this.props.neigh2}
                 className="glyphicon glyphicon-map-marker"
-                style={{fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
+                style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
               </span>
               <span {...this.props.neigh3}
                 className="glyphicon glyphicon-map-marker"
-                style={{fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
+                style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
               </span>
             </GoogleMap>
           </div>
