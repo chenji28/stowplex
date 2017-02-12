@@ -13,12 +13,16 @@ class HostBio extends Component {
           <img style={{maxWidth: '100%'}} src={listing.hostPicture} alt=""/>
         </Col>
         <Col md={10}>
-          <h2>{listing.name}</h2>
-          <span style={{marginRight: 15}}>{listing.address}</span>
-          <Ratings />
-          <div>
-
-          </div>
+          <Col md={10}>
+            <h2>{listing.name}</h2>
+            <span style={{marginRight: 15}}>{listing.address}</span>
+            <Ratings />
+          </Col>
+          <Col md={2} style={{textAlign: 'right', padding: 0}}>
+            <button style={{marginTop: 15}} className='btn btn-large btn-danger'>
+              <span className="glyphicon glyphicon-pencil"></span> Edit listing
+            </button>
+          </Col>
         </Col>
       </Row>
     );

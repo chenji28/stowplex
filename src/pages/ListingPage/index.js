@@ -61,7 +61,7 @@ class ListingPage extends Component {
     const styles = {
       heroImage: {
         backgroundImage: `url(${this.listing.image})`,
-        backgroundRepaet: 'no-repeat',
+        backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         height: 400,
         marginTop: -18

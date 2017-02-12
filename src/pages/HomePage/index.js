@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import boxes from '../../boxes.jpg';
+import ladies from './img/ladies.jpg';
+import bike from './img/bike.jpg';
+
 import {Grid, Row, Col, PageHeader, Button, Glyphicon, FormControl} from 'react-bootstrap';
 import {Typeahead} from 'react-bootstrap-typeahead';
 let DatePicker = require('react-bootstrap-date-picker');
@@ -22,7 +25,8 @@ class HomePage extends Component {
     render() {
         return (
             <Grid>
-                <img src={boxes} alt="Boxes" style={{ width: "100%" }}/>
+                {/* <div style={{ width: "100%", height: 325, backgroundPosition: 'right center bottom 220px', backgroundImage: `url(${bike})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div> */}
+                <div style={{ width: "100%", height: 370, backgroundPosition: 'center center', backgroundImage: `url(${ladies})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div>
                 <PageHeader>Store Your Valuables<br/>
                     <small>Love Your Stuff With Stowplex.</small>
                 </PageHeader>
