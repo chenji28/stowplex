@@ -17,8 +17,6 @@ class MapPage extends Component {
     super(props)
     this.state = {
       city: '',
-      size: '',
-      date: ''
     }
   }
   cities = ['Seattle', 'Redmond', 'Bellevue', 'New-York', 'Los Angeles'];
@@ -36,15 +34,11 @@ class MapPage extends Component {
                  </Col>
                  <Col className="nopadding" xsHidden={true} sm={2} lg={2} md={2}>
                      <DatePicker bsSize="large" style={{ width: "100%" }}
-                                 className="input-lg" onChange={(e) => {
-                         this.setState({ date: e.target.value })
-                     }} value={this.state.date}/>
+                                 className="input-lg"/>
                  </Col>
                  <Col className="nopadding" xsHidden={true} sm={2} lg={2} md={2}>
                      <FormControl componentClass="select" placeholder="select" bsSize="large" className="input-lg"
-                                  style={{ width: "100%" }} onChange={(e) => {
-                         this.setState({ size: e.target.value })
-                     }} value={this.state.size}>
+                                  style={{ width: "100%" }}>
                          <option value="sm">Size</option>
                          <option value="sm">0-100 sqft.</option>
                          <option value="md">100-300 sqft.</option>
