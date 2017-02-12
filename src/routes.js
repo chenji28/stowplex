@@ -8,7 +8,7 @@ import SearchPage from './pages/SearchPage/'
 export default (
   <Route path='/' component={App}>
     <IndexRoute component={HomePage} />
-      <Route path='search' component={SearchPage} />
+    <Route path='search' component={SearchPage} />
     <Route path='listing/:listingId' component={ListingPage} />
   </Route>
 )

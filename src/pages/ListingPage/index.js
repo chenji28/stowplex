@@ -6,6 +6,7 @@ import { Col, Row } from 'react-bootstrap'
 import GoogleMap from 'google-map-react'
 import manImage from './img/man.jpg'
 import joeyImage from './img/joey.jpg'
+import joeyStorage from './img/joey_storage.png'
 
 class ListingPage extends Component {
   constructor(props){
@@ -16,6 +17,7 @@ class ListingPage extends Component {
         hostName: 'Mat Swanson',
         hostPicture: manImage,
         name: 'Available house basement close to Ravenna Park',
+        image:'http://betterhouseinc.com/wp-content/uploads/2013/03/Finished-Basements1.jpg',
         details: '',
         address: 'Ravenna Bullevard, U-District, Seattle',
         description: 'Abundant free space in my house basement really close to Ravenna Park, no exceptions for what you can store. Kajaks, tools, equipement, you got it! Feel free to contact me if you have any questions, you can find my contact information in the listing description',
@@ -30,6 +32,7 @@ class ListingPage extends Component {
         hostName: 'Joey Hawkins',
         hostPicture: joeyImage,
         name: 'Bright, light filled garage in the heart of Seattle.',
+        image: joeyStorage,
         details: '',
         address: 'Ravenna Bullevard, U-District, Seattle',
         description: 'Close to public transportation with new paint and security system in place. New, quiet, and clean. This garage is absolutely terrific with ample natural light. Residential desirable neighborhood of Madison Valley. 5-10 mins away is Downtown Seattle.',
@@ -57,9 +60,9 @@ class ListingPage extends Component {
   render() {
     const styles = {
       heroImage: {
-        backgroundImage: 'url(http://betterhouseinc.com/wp-content/uploads/2013/03/Finished-Basements1.jpg)',
+        backgroundImage: `url(${this.listing.image})`,
         backgroundRepaet: 'no-repeat',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center center',
         height: 400,
         marginTop: -18
       }

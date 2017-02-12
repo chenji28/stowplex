@@ -5,6 +5,14 @@ import {Typeahead} from 'react-bootstrap-typeahead';
 let DatePicker = require('react-bootstrap-date-picker');
 
 class HomePage extends Component {
+    constructor(props){
+    	super(props)
+    	this.state = {
+    		city: '',
+    		size: '',
+    		date: ''
+    	}
+    }
     cities = ['Seattle', 'Redmond', 'Bellevue', 'New-York', 'Los Angeles'];
 
     search() {
