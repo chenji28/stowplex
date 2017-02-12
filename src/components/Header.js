@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 
 import logo from '../logo.svg';
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 import { Link } from 'react-router'
+import userImage from '../pages/ListingPage/img/joey.jpg'
 
 class Header extends Component {
 	constructor(props){
 		super(props)
-		let localLoggedIn = localStorage.getItem( 'localLoggedIn' ) || 1;
+		let localLoggedIn = localStorage.getItem( 'localLoggedIn' ) || false;
 		this.state = {
-			isLoggedIn: localLoggedIn || false
+			isLoggedIn: localLoggedIn
 		}
 	}
     render() {
@@ -25,26 +26,36 @@ class Header extends Component {
                     <Nav pullRight>
                         <NavItem href={!this.state.isLoggedIn ? '#' : '/listing/2'}>
                         	{
-                        		!this.state.isLoggedIn 
+                        		!this.state.isLoggedIn
                         		? 'Become a host'
                         		: 'Check your listing'
                         	}
                         </NavItem>
                         {
-                    		!this.state.isLoggedIn 
-                    		? (<NavItem onClick={(e)=>{ 
-                    			this.setState({ isLoggedIn: !this.state.isLoggedIn})
-                    			localStorage.setItem( 'localLoggedIn', !this.state.isLoggedIn); 
-                    		}} style={{padding: 0}}>
+                    		!this.state.isLoggedIn
+                    		? (<NavItem onClick={(e)=>{
+		                    			this.setState({ isLoggedIn: !this.state.isLoggedIn})
+		                    			localStorage.setItem( 'localLoggedIn', !this.state.isLoggedIn);
+															alert('Log in succesfull!')
+		                    		}} style={{padding: 0}}>
 	                        	<a href="#" id="LoginWithAmazon">
-								  <img style={{marginTop: -8, marginRight: -46}} border="0" alt="Login with Amazon"
-								    src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_156x32.png"
-								    width="156" height="32" />
-								</a>
+														  <img style={{marginTop: -8, marginRight: -46}} border="0" alt="Login with Amazon"
+														    src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_156x32.png"
+														    width="156" height="32" />
+														</a>
 	                        </NavItem>)
-                    		: 'Image'
+                    		: (
+													<NavDropdown title={<img style={{ maxWidth: 35}} className="img-circle" src={userImage} alt=""/>}>
+
+														<MenuItem onClick={(e)=>{
+															this.setState({ isLoggedIn: !this.state.isLoggedIn})
+															localStorage.setItem( 'localLoggedIn', !this.state.isLoggedIn);
+															alert('Log out succesfull!')
+														}}>Log out</MenuItem>
+													</NavDropdown>
+												)
                     	}
-                        
+
                         <NavItem>
                         	<img src="" />
                         </NavItem>
