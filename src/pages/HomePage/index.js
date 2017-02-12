@@ -22,7 +22,7 @@ class HomePage extends Component {
 
     search() {
     	// location.href = '/search?city=' + this.state.city + '&size' + this.state.size + '&checkIn=' + this.state.date;
-    	window.location='/listing/1'
+    	window.location='/map'
     }
 
     render() {
