@@ -7,6 +7,7 @@ import GoogleMap from 'google-map-react'
 import manImage from './img/man.jpg'
 import joeyImage from './img/joey.jpg'
 import joeyStorage from './img/joey_storage.png'
+import matStorage from './img/mat_garage.jpg'
 import {Grid} from 'react-bootstrap';
 
 class ListingPage extends Component {
@@ -19,7 +20,7 @@ class ListingPage extends Component {
         hostName: 'Max',
         hostPicture: manImage,
         name: 'Available house basement close to Pike Place Market',
-        image:'http://betterhouseinc.com/wp-content/uploads/2013/03/Finished-Basements1.jpg',
+        image: matStorage,
         details: '',
         address: '1510 1st Ave, Seattle, USA',
         description: 'Abundant free space in my house basement really close to Pike Place Market, no exceptions for what you can store. Kajaks, tools, equipement, you got it! Feel free to contact me if you have any questions, you can find my contact information in the listing description',
@@ -66,7 +67,7 @@ class ListingPage extends Component {
         backgroundImage: `url(${this.listing.image})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
-        // backgroundSize: 'cover',
+        backgroundSize: 'cover',
         height: 400,
         marginTop: -18
       }
