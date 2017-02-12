@@ -15,11 +15,13 @@ class HomePage extends Component {
     		size: '',
     		date: ''
     	}
+    	this.search=this.search.bind(this);
     }
     cities = ['Seattle', 'Redmond', 'Bellevue', 'New-York', 'Los Angeles'];
 
     search() {
-        location.href = '/search?city=' + this.state.city + '&size' + this.state.size + '&checkIn=' + this.state.date;
+    	// location.href = '/search?city=' + this.state.city + '&size' + this.state.size + '&checkIn=' + this.state.date;
+    	window.location='/listing/1'
     }
 
     render() {
@@ -58,7 +60,8 @@ class HomePage extends Component {
                     <Col xs={3} sm={2} lg={2}
                          md={2}><Button bsStyle="primary" bsSize="large" style={{ width: "100%" }}
                                         onClick={this.search}><Glyphicon
-                        glyph="search"/>&nbsp;<span className="hidden-sm">Search</span></Button></Col>
+                        glyph="search"/>&nbsp;<span className="hidden-sm">Search</span></Button>
+                    </Col>
                 </Row>
             </Grid>
         );

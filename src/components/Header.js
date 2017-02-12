@@ -50,7 +50,6 @@ class Header extends Component {
 														<MenuItem onClick={(e)=>{
 															this.setState({ isLoggedIn: !this.state.isLoggedIn})
 															localStorage.setItem( 'localLoggedIn', !this.state.isLoggedIn);
-															alert('Log out succesfull!')
 														}}>Log out</MenuItem>
 													</NavDropdown>
 												)
