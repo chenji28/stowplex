@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import logo from '../logo.svg';
+import logo from '../logo.png';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 import { Link } from 'react-router'
 import userImage from '../pages/ListingPage/img/joey.jpg'
@@ -17,9 +17,9 @@ class Header extends Component {
         return (
             <Navbar>
                 <Navbar.Header>
-                    <Navbar.Brand>
-                        <img alt="Stowaway" src={logo}/>
-                    </Navbar.Brand>
+										<Link to='/'>
+											<img style={{margin: '5px 0', width: 50}} alt="Stowaway" src={logo}/>
+										</Link>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
