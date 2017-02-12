@@ -2,23 +2,13 @@ import React, {Component} from 'react';
 import boxes from '../../boxes.jpg';
 import ladies from './img/ladies.jpg';
 import bike from './img/bike.jpg';
-import GoogleMap from 'google-map-react'
-import MyGreatPlace from './my_great_place.jsx';
 
 import {Grid, Row, Col, PageHeader, Button, Glyphicon, FormControl} from 'react-bootstrap';
 import {Typeahead} from 'react-bootstrap-typeahead';
 let DatePicker = require('react-bootstrap-date-picker');
 
 class HomePage extends Component {
-	static defaultProps = {
-	    center: {lat: 47.6101360, lng: -122.3420570},
-	    neigh1: {lat: 47.6091360, lng: -122.3400570},
-	    neigh2: {lat: 47.6141360, lng: -122.3390570},
-	    neigh3: {lat: 47.6121360, lng: -122.3440870},
 
-	    zoom: 9,
-	    greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
-	};
     constructor(props){
     	super(props)
     	this.state = {
@@ -76,33 +66,8 @@ class HomePage extends Component {
                         glyph="search"/>&nbsp;<span className="hidden-sm">Search</span></Button>
                     </Col>
                 </Row>
-            <div style={{paddingTop: 50, height: 400}}>
-            <GoogleMap
-              bootstrapURLKeys={{
-                key: 'AIzaSyAxDKJ3r8J6Fnal3vSFuWyXEvv-nydofx0',
-              }}
-              defaultCenter={this.props.center}
-              defaultZoom={15} >
-              <span {...this.props.center}
-                className="glyphicon glyphicon-map-marker"
-                style={{fontSize: 40, color: '#d9230f', textShadow: '1px 2px 0 #eee'}}>
-              </span>
-              <span {...this.props.neigh1}
-                className="glyphicon glyphicon-map-marker"
-                style={{fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
-              </span>
-              <span {...this.props.neigh2}
-                className="glyphicon glyphicon-map-marker"
-                style={{fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
-              </span>
-              <span {...this.props.neigh3}
-                className="glyphicon glyphicon-map-marker"
-                style={{fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
-              </span>
-            </GoogleMap>
-          </div>
             </Grid>
-</div>
+		</div>
         );
     }
 }
