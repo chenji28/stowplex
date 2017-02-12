@@ -15,7 +15,8 @@ class ListingPage extends Component {
     console.log(manImage);
     this.listings = {
       1: {
-        hostName: 'Mat Swanson',
+        id: 1,
+        hostName: 'Max',
         hostPicture: manImage,
         name: 'Available house basement close to Ravenna Park',
         image:'http://betterhouseinc.com/wp-content/uploads/2013/03/Finished-Basements1.jpg',
@@ -24,13 +25,14 @@ class ListingPage extends Component {
         description: 'Abundant free space in my house basement really close to Ravenna Park, no exceptions for what you can store. Kajaks, tools, equipement, you got it! Feel free to contact me if you have any questions, you can find my contact information in the listing description',
         type: 'House',
         location: {
-          lat: 47.6738346,
-          lng: -122.3075649
+          lat: 47.6091360,
+          lng: -122.3400570
         },
         locationDescription: ''
       },
       2: {
-        hostName: 'Joey Hawkins',
+        id: 2,
+        hostName: 'Joey',
         hostPicture: joeyImage,
         name: 'Bright, light filled garage in the heart of Seattle.',
         image: joeyStorage,
@@ -77,7 +79,7 @@ class ListingPage extends Component {
         {/*div style={{ width: "100%", height: 370, backgroundPosition: 'center center', backgroundImage: `url(${ladies})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div*/}
 
         <div className="container" style={{backgroundColor: 'white'}}>
-          <HostBio listing={this.listing}/>
+          <HostBio listing={this.listing} />
           <Row style={{marginTop: 30}}>
             <Col md={8}>
               <h3>Description of the storage</h3>

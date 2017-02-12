@@ -9,7 +9,7 @@ class HostBio extends Component {
     return (
       <Row>
         <Col md={2} style={{textAlign: 'center', marginTop: 18}}>
-          <label htmlFor="" style={{display: 'block'}}>{listing.hostName}</label>
+          <label htmlFor="" style={{fontSize: 18, display: 'block'}}>{listing.hostName}</label>
           <img style={{maxWidth: '100%'}} src={listing.hostPicture} alt=""/>
         </Col>
         <Col md={10}>
@@ -18,11 +18,14 @@ class HostBio extends Component {
             <span style={{marginRight: 15}}>{listing.address}</span>
             <Ratings />
           </Col>
-          <Col md={2} style={{textAlign: 'right', padding: 0}}>
-            <button style={{marginTop: 15}} className='btn btn-large btn-danger'>
-              <span className="glyphicon glyphicon-pencil"></span> Edit listing
-            </button>
-          </Col>
+          {
+            localStorage.getItem( 'localLoggedIn' ) && listing.id !== 1 ?
+            <Col md={2} style={{textAlign: 'right', padding: 0}}>
+              <button style={{marginTop: 15}} className='btn btn-large btn-danger'>
+                <span className="glyphicon glyphicon-pencil"></span> Edit listing
+              </button>
+            </Col> : ''
+          }
         </Col>
       </Row>
     );
