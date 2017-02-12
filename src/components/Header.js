@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import logo from '../logo.png';
+import logoText from '../logo_text.png';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 import { Link } from 'react-router'
 import userImage from '../pages/ListingPage/img/joey.jpg'
@@ -19,6 +20,9 @@ class Header extends Component {
                 <Navbar.Header>
 										<Link to='/'>
 											<img style={{margin: '5px 0', width: 50}} alt="Stowaway" src={logo}/>
+										</Link> &nbsp;&nbsp;
+										<Link to='/'>
+											<img style={{margin: '5px 0', height: 20}} alt="Stowaway" src={logoText}/>
 										</Link>
                     <Navbar.Toggle />
                 </Navbar.Header>
