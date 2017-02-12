@@ -23,8 +23,8 @@ class HomePage extends Component {
         return (
             <Grid>
                 <img src={boxes} alt="Boxes" style={{ width: "100%" }}/>
-                <PageHeader>Love your junk.<br/>
-                    <small>Find place to dump it safely and cheaply.</small>
+                <PageHeader>Store Your Valuables<br/>
+                    <small>Love Your Stuff With Stowplex.</small>
                 </PageHeader>
                 <Row>
                     <Col className="nopadding-right" xs={9} smOffset={1} lgOffset={1} mdOffset={1} sm={4} lg={4}
