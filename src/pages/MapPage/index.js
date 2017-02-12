@@ -1,3 +1,4 @@
+//email fisical, driver or any id, telefone
 import React, {Component} from 'react';
 import GoogleMap from 'google-map-react'
 
@@ -21,6 +22,13 @@ class MapPage extends Component {
   }
   cities = ['Seattle', 'Redmond', 'Bellevue', 'New-York', 'Los Angeles'];
     render() {
+			const markerstyle = {
+				border: '1px solid black', fontSize: 15, backgroundColor: 'white', padding: 5, borderRadius: 5,
+				marginLeft: -30,
+				textAlign: 'center',
+				display: 'block',
+				width: '100px'
+			}
         return (
            <Grid>
 
@@ -59,26 +67,50 @@ class MapPage extends Component {
                     }}
                     defaultCenter={this.props.center}
                     defaultZoom={16} >
-                    <span {...this.props.center}
-      								onClick={(e)=>{location.href = '/listing/2'}}
-                      className="glyphicon glyphicon-map-marker"
-                      style={{cursor: 'pointer', fontSize: 40, color: '#d9230f', textShadow: '1px 2px 0 #eee'}}>
-                    </span>
-                    <span {...this.props.neigh1}
-                      onClick={(e)=>{location.href = '/listing/1'}}
-                      className="glyphicon glyphicon-map-marker"
-                      style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
-                    </span>
-                    <span {...this.props.neigh2}
-                      onClick={(e)=>{location.href = '/listing/1'}}
-                      className="glyphicon glyphicon-map-marker"
-                      style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
-                    </span>
-                    <span {...this.props.neigh3}
-                      onClick={(e)=>{location.href = '/listing/1'}}
-                      className="glyphicon glyphicon-map-marker"
-                      style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
-                    </span>
+										<div {...this.props.center} style={{textAlign: 'center'}}>
+											<span style={{...markerstyle, marginLeft: -3, width: 50}}>
+												You
+											</span><br/>
+											<span
+												onClick={(e)=>{location.href = '/listing/2'}}
+												className="glyphicon glyphicon-map-marker"
+												style={{cursor: 'pointer', fontSize: 40, color: '#d9230f', textShadow: '1px 2px 0 #eee'}}>
+											</span>
+										</div>
+										<div {...this.props.neigh1} style={{textAlign: 'center'}}>
+											<div style={markerstyle}>
+												<label htmlFor="">Joey</label><br/>
+												<label htmlFor="">$250/month</label>
+											</div><br/>
+											<span
+	                      onClick={(e)=>{location.href = '/listing/1'}}
+	                      className="glyphicon glyphicon-map-marker"
+	                      style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
+	                    </span>
+										</div>
+										<div {...this.props.neigh2} style={{textAlign: 'center'}}>
+											<div style={markerstyle}>
+												<label htmlFor="">Max</label><br/>
+												<label htmlFor="">$100/month</label>
+											</div><br/>
+											<span
+	                      onClick={(e)=>{location.href = '/listing/1'}}
+	                      className="glyphicon glyphicon-map-marker"
+	                      style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
+	                    </span>
+										</div>
+										<div {...this.props.neigh3} style={{textAlign: 'center'}}>
+											<div style={markerstyle}>
+												<label htmlFor="">Stanley</label><br/>
+												<label htmlFor="">$300/month</label>
+											</div><br/>
+											<span
+	                      onClick={(e)=>{location.href = '/listing/1'}}
+	                      className="glyphicon glyphicon-map-marker"
+	                      style={{cursor: 'pointer', fontSize: 40, color: '#33AFFF', textShadow: '1px 2px 0 #eee'}}>
+	                    </span>
+										</div>
+
                   </GoogleMap>
               </div>
             </Grid>
