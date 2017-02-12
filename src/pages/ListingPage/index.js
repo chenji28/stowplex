@@ -1,26 +1,47 @@
 import React, { Component } from 'react';
 import request from 'axios'
 import HostBio from './components/HostBio'
+import Booker from './components/Booker'
 import { Col, Row } from 'react-bootstrap'
-import GoogleMap from 'google-map-react';
+import GoogleMap from 'google-map-react'
+import manImage from './img/man.jpg'
+import joeyImage from './img/joey.jpg'
 
 class ListingPage extends Component {
   constructor(props){
     super(props)
-
-    this.listing = {
-      hostName: 'Joey Hawkins',
-      hostPicture: 'https://httpbin.org/image/png',
-      name: 'Available house basement close to Ravenna Park',
-      details: '',
-      address: 'Ravenna Bullevard, U-District, Seattle',
-      description: 'Abundant free space in my house basement really close to Ravenna Park, no exceptions for what you can store. Kajaks, tools, equipement, you got it! Feel free to contact me if you have any questions, you can find my contact information in the listing description',
-      type: 'House',
-      location: {
-        lat: 47.6738346,
-        lng: -122.3075649
+    console.log(manImage);
+    this.listings = {
+      1: {
+        hostName: 'Mat Swanson',
+        hostPicture: manImage,
+        name: 'Available house basement close to Ravenna Park',
+        details: '',
+        address: 'Ravenna Bullevard, U-District, Seattle',
+        description: 'Abundant free space in my house basement really close to Ravenna Park, no exceptions for what you can store. Kajaks, tools, equipement, you got it! Feel free to contact me if you have any questions, you can find my contact information in the listing description',
+        type: 'House',
+        location: {
+          lat: 47.6738346,
+          lng: -122.3075649
+        },
+        locationDescription: ''
+      },
+      2: {
+        hostName: 'Joey Hawkins',
+        hostPicture: joeyImage,
+        name: 'Bright, light filled garage in the heart of Seattle.',
+        details: '',
+        address: 'Ravenna Bullevard, U-District, Seattle',
+        description: 'Close to public transportation with new paint and security system in place. New, quiet, and clean. This garage is absolutely terrific with ample natural light. Residential desirable neighborhood of Madison Valley. 5-10 mins away is Downtown Seattle.',
+        type: 'Garage',
+        location: {
+          lat: 47.6101360,
+          lng: -122.3420570
+        },
+        locationDescription: '5-10 mins away is Downtown Seattle (Pikes Place Market, SAM museum, Seattle Art Museum, Space Needle, Experience Music Project, Ride the Ducks), Belltown (great bars and restaurants), the International District (Thai, Vietnamese, Chinese, Japanese food central), Madrona (cute shops and local eateries), and Madison Park (beach front, view of Rainier and east side) \n Within a 20 minute drive of: Mariners and Seahawks Stadiums, Woodland Park Zoo, Museum of Flight, The University of Washington, Boeing Field, Ferries to the Olympic Peninsula, The Ballard Locks, West Seattle, Alki Beach, SeaTac International Airport, Bellevue, and Redmond.'
       }
     }
+    this.listing = this.listings[`${props.params.listingId}`]
   }
   componentWillMount(){
     request
@@ -50,23 +71,83 @@ class ListingPage extends Component {
           <HostBio listing={this.listing}/>
           <Row style={{marginTop: 30}}>
             <Col md={8}>
-              <h3>About the space</h3>
+              <h3>Description of the storage</h3>
+              <p className='display-linebreak'>{this.listing.description}</p>
+              <ul>
+                <li>
+                  Property Type: {this.listing.type}
+                </li>
+                <li>
+                  Approximate Size: 2 car garage
+                </li>
+                <li>
+                  Check In: 11:00am
+                </li>
+              </ul>
+              <hr/>
               <Row>
-                <Col md={1}>
-                  <h4>{this.listing.type}</h4>
+                <Col md={3}>
+                  <h5 style={{margin: 0}}>Amenities</h5>
                 </Col>
-                <Col md={9} style={{marginTop: 9, fontSize: 16}}>
-                  <span>12ft</span> x
-                  <span>12ft</span> x
-                  <span>12ft</span>
+                <Col md={9}>
+                  <ul>
+                    <li>
+                      24 hours key access pad
+                    </li>
+                    <li>
+                      Temperature Controlled
+                    </li>
+                    <li>
+                      Dry
+                    </li>
+                    <li>
+                      Shelving available
+                    </li>
+                    <li>
+                      Free pick up and delivery
+                    </li>
+                    <li>
+                      Temperature Controlled
+                    </li>
+                    <li>
+                      Security System
+                    </li>
+                  </ul>
                 </Col>
               </Row>
-              <p className='display-linebreak'>{this.listing.description}</p>
+              <hr/>
+              <Row>
+                <Col md={3}>
+                  <h5 style={{margin: 0}}>Price</h5>
+                </Col>
+                <Col md={9}>
+                  <ul>
+                    <li>
+                      $250/month
+                    </li>
+                    <li>
+                      $1300/6 months
+                    </li>
+                    <li>
+                      $2600/12 months
+                    </li>
+                    <br/>
+                    Notice Period: Strict (one month’s notice) <br/>
+                    Cleaning Fee: $25 <br/>
+                    Security Deposit: $250 <br/>
+                  </ul>
+                </Col>
+              </Row>
+              <hr/>
+            </Col>
+            <Col md={4}>
+              <Booker />
             </Col>
           </Row>
           <div style={{paddingTop: 0, height: 400}}>
             <h3>Location</h3>
             <p>{this.listing.hostName}'s space is located at {this.listing.address}</p>
+            <p>{this.listing.locationDescription}</p>
             <GoogleMap
               bootstrapURLKeys={{
                 key: 'AIzaSyAxDKJ3r8J6Fnal3vSFuWyXEvv-nydofx0',

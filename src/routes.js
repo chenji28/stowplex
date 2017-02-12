@@ -7,6 +7,6 @@ import ListingPage from './pages/ListingPage/'
 export default (
   <Route path='/' component={App}>
     <IndexRoute component={HomePage} />
-    <Route path='listing/:hostId' component={ListingPage} />
+    <Route path='listing/:listingId' component={ListingPage} />
   </Route>
 )
