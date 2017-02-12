@@ -15,8 +15,8 @@ class Header extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
-                        <NavItem> <a href="#">Become a host</a> </NavItem>
-                        <NavItem> <a href="#">Sign in</a> </NavItem>
+                        <NavItem>Become a host</NavItem>
+                        <NavItem>Sign in</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
