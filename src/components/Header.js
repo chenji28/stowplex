@@ -4,8 +4,8 @@ import logo from '../logo.png';
 import logoText from '../logo_text.png';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 import { Link } from 'react-router'
-import userImage from '../pages/ListingPage/img/joey.jpg'
-
+import userImage from './img/johnDP3.png'
+ 
 class Header extends Component {
 	constructor(props){
 		super(props)
