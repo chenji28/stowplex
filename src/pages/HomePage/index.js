@@ -28,10 +28,9 @@ class HomePage extends Component {
     render() {
         return (
         	<div>
-            {/*Grid fluid={true}*/}
            <Grid>
                 {/* <div style={{ width: "100%", height: 325, backgroundPosition: 'right center bottom 220px', backgroundImage: `url(${bike})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div> */}
-                <div style={{ width: "100%", height: 370, backgroundPosition: 'center center', backgroundImage: `url(${ladies})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div>
+                <div style={{marginTop: -18, width: "100%", height: 370, backgroundPosition: 'center center', backgroundImage: `url(${ladies})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div>
                 <PageHeader>Store your valuables<br/>
                     <small>love your stuff with StowPlex.</small>
                 </PageHeader>
