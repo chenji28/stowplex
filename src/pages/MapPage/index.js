@@ -1,4 +1,3 @@
-//email fisical, driver or any id, telefone
 import React, {Component} from 'react';
 import GoogleMap from 'google-map-react'
 

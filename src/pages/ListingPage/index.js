@@ -25,6 +25,7 @@ class ListingPage extends Component {
         address: '1510 1st Ave, Seattle, USA',
         description: 'Abundant free space in my house basement really close to Pike Place Market, no exceptions for what you can store. Kajaks, tools, equipement, you got it! Feel free to contact me if you have any questions, you can find my contact information in the listing description',
         type: 'House',
+        price: '100',
         location: {
           lat: 47.6091360,
           lng: -122.3400570
@@ -41,6 +42,7 @@ class ListingPage extends Component {
         address: 'Ravenna Bullevard, U-District, Seattle',
         description: 'Close to public transportation with new paint and security system in place. New, quiet, and clean. This garage is absolutely terrific with ample natural light. Residential desirable neighborhood of Madison Valley. 5-10 mins away is Downtown Seattle.',
         type: 'Garage',
+        price: '250',
         location: {
           lat: 47.6101360,
           lng: -122.3420570
@@ -135,7 +137,7 @@ class ListingPage extends Component {
                 <Col md={9}>
                   <ul>
                     <li>
-                      $250/month
+                      ${this.listing.price}/month
                     </li>
                     <li>
                       $1300/6 months
@@ -153,7 +155,7 @@ class ListingPage extends Component {
               <hr/>
             </Col>
             <Col md={4}>
-              <Booker />
+              <Booker listing={this.listing}/>
             </Col>
           </Row>
           <div style={{paddingTop: 0, height: 400}}>

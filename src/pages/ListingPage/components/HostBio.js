@@ -17,6 +17,14 @@ class HostBio extends Component {
             <h2>{listing.name}</h2>
             <span style={{marginRight: 15}}>{listing.address}</span>
             <Ratings />
+            <Row>
+              <Col md={12} style={{marginTop: 20, fontSize: 18}}>
+                <label style={{display: 'block'}} htmlFor="" className="text-success"><span className='glyphicon glyphicon-ok-circle'></span> Government ID verified</label>
+                <label style={{display: 'block'}} htmlFor="" className="text-success"><span className='glyphicon glyphicon-ok-circle'></span> Email verified</label>
+                <label style={{display: 'block'}} htmlFor="" className="text-success"><span className='glyphicon glyphicon-ok-circle'></span> Telephone verified</label>
+                <label style={{display: 'block'}} htmlFor="" className="text-success"><span className='glyphicon glyphicon-ok-circle'></span> Address verified</label>
+              </Col>
+            </Row>
           </Col>
           {
             localStorage.getItem( 'localLoggedIn' ) && listing.id !== 1 ?
