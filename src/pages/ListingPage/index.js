@@ -7,6 +7,7 @@ import GoogleMap from 'google-map-react'
 import manImage from './img/man.jpg'
 import joeyImage from './img/joey.jpg'
 import joeyStorage from './img/joey_storage.png'
+import {Grid} from 'react-bootstrap';
 
 class ListingPage extends Component {
   constructor(props){
@@ -63,13 +64,18 @@ class ListingPage extends Component {
         backgroundImage: `url(${this.listing.image})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
+        // backgroundSize: 'cover',
         height: 400,
         marginTop: -18
       }
     }
     return (
+    	
       <div>
+      <Grid fluid={true}>
         <div style={styles.heroImage} alt="" ></div>
+        {/*div style={{ width: "100%", height: 370, backgroundPosition: 'center center', backgroundImage: `url(${ladies})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}></div*/}
+
         <div className="container" style={{backgroundColor: 'white'}}>
           <HostBio listing={this.listing}/>
           <Row style={{marginTop: 30}}>
@@ -164,7 +170,9 @@ class ListingPage extends Component {
             </GoogleMap>
           </div>
         </div>
+        </Grid>
       </div>
+      
     );
   }
 }
