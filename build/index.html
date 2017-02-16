@@ -12,12 +12,15 @@
     <title>Stowplex</title>
 
     <link href="css/bootstrap.css" rel="stylesheet" />
-	<link href="css/coming-sssoon.css" rel="stylesheet" />
+		<link href="css/coming-sssoon.css" rel="stylesheet" />
 
     <!--     Fonts     -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.css">
 
+		<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+		<script src="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -114,18 +117,18 @@
                         <form class="form-inline" role="form">
                           <div class="form-group">
                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                            <input type="email" class="form-control transparent" placeholder="Your email here...">
+                            <input type="email" id='email' class="form-control transparent" placeholder="Your email here...">
                           </div>
                           <button type="submit" class="btn btn-warning btn-fill">Notify Me</button>
 													<div class="form-group">
 														<label for="host" style="color: white">Interested in being a:</label>
                           </div>
 													<div class="form-group">
-														<input type="checkbox" id='host' name="host" value="">
+														<input type="checkbox" id='host' name="host" value="host">
 														<label for="host" style="color: white">Host</label>
                           </div>
 													<div class="form-group">
-														<input type="checkbox" id='guest' name="guest" value="">
+														<input type="checkbox" id='guest' name="guest" value="guest">
 														<label for="guest" style="color: white">Guest</label>
                           </div>
                         </form>
@@ -142,10 +145,42 @@
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			// Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyAyj26LgGHiMQ2iB3ktxr6MO7BW17nrYNk",
+		    authDomain: "stowplex-email-storage.firebaseapp.com",
+		    databaseURL: "https://stowplex-email-storage.firebaseio.com",
+		    storageBucket: "stowplex-email-storage.appspot.com",
+		    messagingSenderId: "1002122986454"
+		  };
+		  firebase.initializeApp(config);
+
 			$('form').on('submit', function(e){
 				e.preventDefault();
-				alert('a');
+				if ($('#email').val()) {
+					firebase.database().ref('emails').push({
+						email: $('#email').val(),
+						host: $('#host').prop('checked'),
+						guest: $('#guest').prop('checked'),
+					});
+				}
+				else {
+					swal(
+						'',
+						'Please write your email address',
+						'warning'
+					);
+				}
 			})
+			var ref = firebase.database().ref('emails');
+			ref.on('child_added', function(data) {
+				swal(
+					'Thank you!',
+					'We will keep you posted with launch updates',
+					'success'
+				)
+				$('form')[0].reset()
+			});
 		})
 	</script>
 </html>
