@@ -5,6 +5,13 @@ import logoText from '../logo_text.png';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 import { Link } from 'react-router'
 import userImage from '../pages/ListingPage/img/joey.jpg'
+import FacebookLogin from './Facebook';
+
+
+const responseFacebook = (response) => {
+	console.log(response);
+	/*1088597931155576*/
+}
 
 class Header extends Component {
 	constructor(props){
@@ -14,6 +21,8 @@ class Header extends Component {
 			isLoggedIn: localLoggedIn
 		}
 	}
+
+
     render() {
         return (
             <Navbar>
@@ -47,7 +56,8 @@ class Header extends Component {
 														    src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_156x32.png"
 														    width="156" height="32" />
 														</a>
-	                        </NavItem>)
+	                        </NavItem>
+													)
                     		: (
 													<NavDropdown title={<img style={{ maxWidth: 35}} className="img-circle" src={userImage} alt=""/>}>
 
@@ -58,6 +68,14 @@ class Header extends Component {
 													</NavDropdown>
 												)
                     	}
+											<FacebookLogin
+												appId="1835355423370996"
+												autoLoad
+												callback={responseFacebook}
+												icon="fa-facebook"
+											/>
+
+
 
                         <NavItem>
                         	<img src="" />
