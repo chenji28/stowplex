@@ -1,6 +1,6 @@
 // @flow
 import React, { PropTypes } from 'react';
-// import styles from '../styles/facebook.scss';
+import styles from './Facebook.css';
 import objectToParams from './objectToParams';
 
 const getIsMobile = () => {
@@ -44,7 +44,7 @@ class FacebookLogin extends React.Component {
   };
 
   static defaultProps = {
-    textButton: 'Login with Facebook',
+    textButton: ' Login with Facebook',
     typeButton: 'button',
     redirectUri: typeof window !== 'undefined' ? window.location.href : '/',
     scope: 'public_profile,email',
@@ -190,9 +190,9 @@ class FacebookLogin extends React.Component {
   style() {
     const defaultCSS = this.constructor.defaultProps.cssClass;
     if (this.props.cssClass === defaultCSS) {
-      return <style dangerouslySetInnerHTML={{ __html: '' }}></style>;
+      //return <style dangerouslySetInnerHTML={{ __html: '' }}></style>;
 
-      //return <style dangerouslySetInnerHTML={{ __html: styles }}></style>;
+      return <style dangerouslySetInnerHTML={{ __html: styles }}></style>;
     }
     return false;
   }
