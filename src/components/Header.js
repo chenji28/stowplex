@@ -68,12 +68,14 @@ class Header extends Component {
 													</NavDropdown>
 												)
                     	}
-											<FacebookLogin
-												appId="1835355423370996"
-												autoLoad
-												callback={responseFacebook}
-												icon="fa-facebook"
-											/>
+											<NavItem>
+												<FacebookLogin
+													appId="1835355423370996"
+													autoLoad
+													callback={responseFacebook}
+													icon="fa-facebook"
+												/>
+											</NavItem>
 
 
 

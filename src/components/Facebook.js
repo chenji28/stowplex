@@ -242,7 +242,7 @@ class FacebookLogin extends React.Component {
           {this.style()}
         </span>
        )
-      :(  <div>
+      :(  <div className ="after-fb-login">
             <img src={this.state.userProfile.picture.data.url} />
             <div>{this.state.userProfile.name}</div>
             <button onClick={this.logoutTest.bind(this)}>log out</button>
